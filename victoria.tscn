@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk7pmufvue1st"]
+
+[ext_resource type="Script" uid="uid://db68ac4xp6oi7" path="res://victoria.gd" id="1_okh8r"]
+[ext_resource type="Texture2D" uid="uid://qqvh3uev5gaj" path="res://vic_1.png" id="2_58qoj"]
+
+[node name="Victoria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_okh8r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_58qoj")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="LayoutVertical" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/LayoutVertical"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/LayoutVertical"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="BtnVolver2" type="Button" parent="MarginContainer/LayoutVertical/HBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "VOLVER AL INICIO"
+
+[connection signal="pressed" from="MarginContainer/LayoutVertical/HBoxContainer/BtnVolver2" to="." method="_on_btn_volver_2_pressed"]

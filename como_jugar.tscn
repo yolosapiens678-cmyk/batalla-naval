@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfqaicw4nqfyf"]
+
+[ext_resource type="Texture2D" uid="uid://d0bi752i1g61q" path="res://volver.png" id="1_r1osh"]
+[ext_resource type="Script" uid="uid://8hclnnjwlcfx" path="res://como_jugar.gd" id="1_yniub"]
+
+[node name="Como_Jugar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yniub")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07450981, 0.21568628, 0.4117647, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="LayoutVerical" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="TituloLabel" type="Label" parent="MarginContainer/LayoutVerical"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 53
+text = "¿COMO SE JUEGA?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/LayoutVerical"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/LayoutVerical/HBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="BtnVolver" type="Button" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("1_r1osh")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer2/BtnVolver" to="." method="_on_btn_volver_pressed"]

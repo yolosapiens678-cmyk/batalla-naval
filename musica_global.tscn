@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg7c7m7kd1hje"]
+
+[ext_resource type="AudioStream" uid="uid://jlw60w5mjumf" path="res://audiomachine - Guardians at the Gate.mp3" id="1_vohvr"]
+
+[node name="MusicaGlobal" type="AudioStreamPlayer"]
+stream = ExtResource("1_vohvr")
+autoplay = true

@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://q3yqpm0kjbyl"]
+
+[ext_resource type="Script" uid="uid://dl0ar0r3ch32k" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://u2thcgtmkdrk" path="res://fondo4.png" id="2_0xm2m"]
+
+[sub_resource type="FontFile" id="FontFile_ig7tw"]
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07450981, 0.21568628, 0.4117647, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -128.01202
+offset_bottom = -76.872314
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1240367, 1.1293446)
+texture = ExtResource("2_0xm2m")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LayoutPrincipal" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TituloLabel" type="Label" parent="LayoutPrincipal"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.54901963, 0, 1)
+theme_override_constants/line_spacing = 6
+theme_override_constants/paragraph_spacing = -6
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 45
+text = "BATALLA NAVAL"
+horizontal_alignment = 1
+
+[node name="ContenedorTableros" type="HBoxContainer" parent="LayoutPrincipal"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="SeccionJugador" type="VBoxContainer" parent="LayoutPrincipal/ContenedorTableros"]
+layout_mode = 2
+
+[node name="LabelJugador" type="Label" parent="LayoutPrincipal/ContenedorTableros/SeccionJugador"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tablero Jugador"
+horizontal_alignment = 1
+
+[node name="GridJugador" type="GridContainer" parent="LayoutPrincipal/ContenedorTableros/SeccionJugador"]
+layout_mode = 2
+columns = 10
+
+[node name="SeccionRival" type="VBoxContainer" parent="LayoutPrincipal/ContenedorTableros"]
+layout_mode = 2
+
+[node name="LabelRival" type="Label" parent="LayoutPrincipal/ContenedorTableros/SeccionRival"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tablero de la ia"
+horizontal_alignment = 1
+
+[node name="GridRival" type="GridContainer" parent="LayoutPrincipal/ContenedorTableros/SeccionRival"]
+layout_mode = 2
+columns = 10
+
+[node name="TiempoLabel" type="Label" parent="LayoutPrincipal"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("FontFile_ig7tw")
+theme_override_font_sizes/font_size = 23
+text = "Tempo Restante: 60s"
+horizontal_alignment = 1
+
+[node name="EstadoTurnoLabel" type="Label" parent="LayoutPrincipal"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 22
+text = "Preparate para la batalla"
+horizontal_alignment = 1
